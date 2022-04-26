@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Git Basic Commands for everyday work | LearnSmartCoding</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Git Basic Commands for everyday work - Developer Essentials</h2>
+  <br>
+  <table class="table table-hover">
+    <tbody>
+      <tr>
+        <th class="">Git task</th>
+        <th class="">Notes</th>
+        <th width="400" class="confluenceTh">Git commands</th>
+      </tr>
+      <tr>
+        <td colspan="1"><strong>Tell Git who
+            you are</strong></td>
+        <td colspan="1">Configure the author name and email address to be used with your
+          commits.<p>Note that Git <a rel="nofollow" class="external-link"
+              href="http://stackoverflow.com/questions/26159274/is-it-possible-to-have-a-trailing-period-in-user-name-in-git/26219423#26219423">strips
+              some characters</a> (for example trailing periods) from <code>user.name</code>.</p>
+        </td>
+        <td colspan="1"><code>git config --global user.name "Learn Smart Coding"</code>
+          <p><code>git config&nbsp;--global&nbsp;user.email learnsmartcoding@gmail.com</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Create a new
+            local repository </strong></td>
+        <td>&nbsp;</td>
+        <td>
+          <pre>git init</pre>
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="2"><strong>Check out a
+            repository</strong></td>
+        <td>Create a working copy of a local repository:</td>
+        <td>
+          <pre>git clone /path/to/repository</pre>
+        </td>
+      </tr>
+      <tr>
+        <td>For a remote server, use:</td>
+        <td>
+          <pre>git clone username@host:/path/to/repository</pre>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Add files</strong>
+        </td>
+        <td>Add one or more files to staging (index):</td>
+        <td>
+          <pre>git add &lt;filename&gt;
+
+git add * 
+
+git add --all</pre>
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="2"><strong>Commit </strong>
+        </td>
+        <td colspan="1">Commit changes to head (but not yet to the remote repository):</td>
+        <td colspan="1">
+          <pre>git commit -m "Commit message"</pre>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">Commit any files you've added with <code>git add</code>, and also
+          commit any files you've changed since then:</td>
+        <td colspan="1">
+          <pre>git commit -a</pre>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1"><strong>Push</strong></td>
+        <td colspan="1">Send changes to the master branch of your remote repository:</td>
+        <td colspan="1">
+          <pre>git push origin &lt;branchname&gt;
+
+e.g. git push origin feature/branchname
+
+e.g. git push origin master
+          </pre>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1"><strong>Status
+          </strong></td>
+        <td colspan="1">List the files you've changed and those you still need to add or
+          commit:</td>
+        <td colspan="1">
+          <pre>git status</pre>
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="2"><strong>Connect to a remote
+            repository</strong></td>
+        <td colspan="1">If you haven't connected your local repository to a remote server, add
+          the server to be able to push to it:</td>
+        <td colspan="1"><code>git remote add origin &lt;server&gt;</code></td>
+      </tr>
+      <tr>
+        <td colspan="1">List all currently configured remote repositories:</td>
+        <td colspan="1"><code>git remote -v</code></td>
+      </tr>
+      <tr>
+        <td rowspan="7"><strong>Branches </strong></td>
+        <td colspan="1">Create a new branch and switch to it:</td>
+        <td colspan="1">
+          <pre>git checkout -b &lt;branchname&gt;</pre>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">Switch from one branch to another:</td>
+        <td colspan="1">
+          <pre>git checkout &lt;branchname&gt;</pre>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">List all the branches in your repo, and also tell you what branch
+          you're currently in:</td>
+        <td colspan="1">
+          <pre>git branch</pre>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">Delete the feature branch:</td>
+        <td colspan="1">
+          <pre>git branch -d &lt;branchname&gt;</pre>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">Push the branch to your remote repository, so others can use it:</td>
+        <td colspan="1">
+          <pre>git push origin &lt;branchname&gt;</pre>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">Push all branches to your remote repository:</td>
+        <td colspan="1">
+          <pre>git push --all origin</pre>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">Delete a branch on your remote repository:</td>
+        <td colspan="1">
+          <pre>git push origin :&lt;branchname&gt;</pre>
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="4"><strong>Update from the remote
+            repository</strong></td>
+        <td colspan="1">Fetch and merge changes on the remote server to your working directory:
+        </td>
+        <td colspan="1"><code>git pull</code></td>
+      </tr>
+      <tr>
+        <td colspan="1">To merge a different branch into your active branch:</td>
+        <td colspan="1">
+          <pre>git merge &lt;branchname&gt;</pre>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">View all the merge conflicts:<p>View the conflicts against the base
+            file:</p>
+          <p>Preview changes, before merging:</p>
+        </td>
+        <td colspan="1"><code>git diff</code>
+          <p><code>git diff --base &lt;filename&gt;</code></p>
+          <pre>git diff &lt;sourcebranch&gt; &lt;targetbranch&gt;</pre>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">After you have manually resolved any conflicts, you mark the changed
+          file:</td>
+        <td colspan="1">
+          <pre>git add &lt;filename&gt;</pre>
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="3"><strong>Tags</strong></td>
+        <td colspan="1">You can use tagging to mark a significant changeset, such as a release:
+        </td>
+        <td colspan="1">
+          <pre>git tag 1.0.0 &lt;commitID&gt;</pre>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">CommitId is the leading characters of the changeset ID, up to 10, but
+          must be unique. Get the ID using:</td>
+        <td colspan="1">
+          <pre>git log</pre>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">Push all tags to remote repository:</td>
+        <td colspan="1">
+          <pre>git push --tags origin</pre>
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="2"><strong>Undo local changes</strong>
+        </td>
+        <td colspan="1">If you mess up, you can replace the changes in your working tree with
+          the last content in head:<p>Changes already added to the index, as well as new files, will be kept.</p>
+        </td>
+        <td colspan="1">
+          <pre>git checkout -- &lt;filename&gt;</pre>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="1">Instead, to drop all your local changes and commits, fetch the latest
+          history from the server and point your local master branch at it, do this:</td>
+        <td colspan="1">
+          <pre>git fetch origin
+
+git reset --hard origin/master</pre>
+        </td>
+      </tr>
+      <tr>
+        <td><span><strong>Search</strong> </span></td>
+        <td colspan="1">Search the working directory for <code>bar()</code>:</td>
+        <td colspan="1"><code>git grep "bar()"</code></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
