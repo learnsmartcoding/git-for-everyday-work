@@ -1,1 +1,2 @@
 my second branch firstline
+my master file first line
